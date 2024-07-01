@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru" >
+<head>
+	<meta charset="UTF-8">
+	<title>Регистрация / Авторизация</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/regautst.css">
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="main">  	
+		<input type="checkbox" id="checkbox" aria-hidden="true">
+			<div class="signup">
+				<form>
+					<label for="checkbox" aria-hidden="true">Регистрация</label>
+					<input type="text" id="firstName" placeholder="Имя" />
+					<input type="email" id="email" name="email" placeholder="Почта" required="нада">
+
+                    <input type="password" name="password" id="password" placeholder="Пароль" required>
+					<input type="password" name="password" id="passwordConfirmation" placeholder="Повторите" required />
+					<button id="reg">Зарегистрироваться</button>
+				</form>
+			</div>
+
+			<div class="login">
+				<form>
+					<label for="checkbox" aria-hidden="true">Авторизация</label>
+					<input type="text" name="email" id="login" placeholder="Введите логин..." required="">
+					<input type="password" name="password" id="password_log" placeholder="Введите пароль..." required="">
+					<button id="log">Войти</button>
+				</form>
+			</div>
+	</div>
+	<script src="js/client.js"></script>
+  <script>
+    document.getElementById('reg').addEventListener('click', async function(event) {
+        event.preventDefault();
+    
+        const firstName = document.getElementById('firstName').value;
+        // const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const passwordConfirmation = document.getElementById('passwordConfirmation').value;
+        // const gender = document.querySelector('input[name="gender"]:checked') ? document.querySelector('input[name="gender"]:checked').value : null;
+    
+        const formData = {
+            email: email,
+            password: password,
+        };
+    
+        // Вызываем функцию регистрации и ожидаем ее завершения
+        const reload = await reg(formData);
+        if (reload){
+           window.location.href="index.html";
+        }
+    });
+     document.getElementById('log').addEventListener('click', async function(event) {
+        event.preventDefault();
+    
+        const email = document.getElementById('login').value;
+        const password = document.getElementById('password_log').value;
+        // Вызываем функцию авторизацию и ожидаем ее завершения
+        const reload = await log(email, password);
+        if (reload){
+           window.location.href="index.html";
+        }
+    });
+    
+    </script>
+</body>
+</html>

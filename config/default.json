@@ -1,0 +1,15 @@
+{
+  "auth": {
+    "bd_name": "test",
+    "bd_user": "root",
+    "bd_password": "",
+    "bd_host": "localhost",
+    
+    "expires_in": "10m",
+    "expires_in_ref": "72h",
+    "accessTokenExpTime": "72h",
+    "refreshTokenExpTime": 200,
+    "secret_key": "1122334455",
+    "secret_key_ref": "1122334455"
+  }
+}
