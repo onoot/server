@@ -247,6 +247,8 @@ a,button{
 a:hover{
 	text-decoration:none;
 }
+
+
 /*================================================
 Preloader Area CSS
 =================================================*/
@@ -325,7 +327,7 @@ Preloader Area CSS
 }
 
 .preloader .loader .indicator svg polyline#front {
-  stroke: rgba(0, 128, 0, 0.432);
+  stroke: rgb(0, 128, 0);
   stroke-dasharray: 12, 36;
   stroke-dashoffset: 48;
   -webkit-animation: dash 1s linear infinite;
@@ -340,7 +342,7 @@ Preloader Area CSS
   height: 100%;
   width: 60%;
   z-index: -1;
-  background: rgba(0, 128, 0, 0.432);
+  background: rgb(0, 128, 0);
   -webkit-transition: .9s;
   transition: .9s;
 }
